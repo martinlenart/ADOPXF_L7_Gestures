@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			 x:Class="Gestures.Views.TapCommandPage">
+  <StackLayout>
+    <Image Source="tapped.jpg" HeightRequest="150" WidthRequest="150">
+		<Image.GestureRecognizers>
+            <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="Image1"/>
+        </Image.GestureRecognizers>
+	</Image>
+
+	<Frame OutlineColor="Accent" BackgroundColor="Transparent" Padding="20, 20"
+           HorizontalOptions="Center" VerticalOptions="CenterAndExpand">
+      
+        <Frame.GestureRecognizers>
+	        <TapGestureRecognizer Command="{Binding TapCommand}" CommandParameter="Frame1" />
+        </Frame.GestureRecognizers>
+      
+        <Label Text="Tap inside frame or on the monkey" Font="Large" />
+    </Frame>
+
+    <Label x:Name="label" Text="{Binding NumberOfTapsTapped}" Font="Large"
+           HorizontalOptions="Center" VerticalOptions="CenterAndExpand" />
+
+  </StackLayout>
+</ContentPage>
